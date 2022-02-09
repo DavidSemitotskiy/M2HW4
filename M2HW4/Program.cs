@@ -17,9 +17,10 @@ public class Program
         Console.WriteLine($"Количество животных типа - {TypesOfAnimal.AnimalWithWool} = {result.Item2}");
         Console.WriteLine($"Количество животных типа - {TypesOfAnimal.AnimalWithHorns} = {result.Item3}");
         Console.WriteLine($"Количество животных типа - {TypesOfAnimal.AnimalWithHooves} = {result.Item4}");
-        Console.WriteLine("Поиск по полу животного: ");
         Random rand = new Random();
-        var result1 = zoo.SearchGenderAnimal((GenderAnimal)rand.Next(2));
+        GenderAnimal gender = (GenderAnimal)rand.Next(2);
+        Console.WriteLine($"Поиск по полу животного: {gender}");
+        var result1 = zoo.SearchGenderAnimal(gender);
         if (result1 == null || result1.Length == 0)
         {
             Console.WriteLine("По запросу не было найдено животных!!");
